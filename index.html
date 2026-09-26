@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="그림 그릴 때 옆에 붙어 있는 작업 친구. 작업 시간 재기, 마감 챙기기, 수입 정리까지 한 곳에서. 윈도우용 무료 프로그램.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Focus Buddy — 그림 작업 친구">
+<meta property="og:description" content="그림 그릴 때 옆에 붙어 있는 작업 친구. 작업 시간 재기, 마감 챙기기, 수입 정리까지 한 곳에서. 윈도우용 무료 프로그램.">
+<meta property="og:url" content="https://shuna077.github.io/focusbuddy/">
+<meta property="og:image" content="https://shuna077.github.io/focusbuddy/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23e592a8'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%232a1219' stroke-width='3'/%3E%3C/svg%3E">
+<title>Focus Buddy 소개</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&family=Silkscreen&display=swap">
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#17151c; --bg2:#1d1a23; --card:#231f2a; --line:#382f40;
+  --text:#f4eef2; --muted:#b9adbd; --faint:#8a7f8f;
+  --rose:#e592a8; --rose-ink:#2a1219; --gold:#d8b45a; --mint:#8fd6bb;
+  --display:"Jua","Gowun Dodum","Noto Sans CJK KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --body:"Gowun Dodum","Noto Sans CJK KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --pixel:"Silkscreen","Courier New",monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.75;
+  -webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:anywhere}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:20px}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;line-height:1.3}
+p{margin:0}
+.tag{font-family:var(--pixel);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:22px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:20px}
+.brand i{width:26px;height:26px;border-radius:8px;background:var(--rose);display:grid;place-items:center;box-shadow:inset 0 -3px 0 rgba(0,0,0,.18)}
+.brand i::after{content:"";width:10px;height:10px;border:2px solid var(--rose-ink);border-radius:50%}
+.by{font-size:10px;color:var(--faint);opacity:.75;letter-spacing:.01em}
+.by b{color:var(--text);font-weight:400;font-family:var(--pixel);font-size:12px;letter-spacing:.05em}
+
+.hero{padding-block:28px 12px;display:grid;gap:22px}
+.hero h1{font-size:clamp(34px,6vw,58px)}
+.hero h1 em{font-style:normal;color:var(--rose)}
+.lead{font-size:18px;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:14px;background:var(--rose);
+  color:var(--rose-ink);font-family:var(--display);font-size:18px;text-decoration:none;box-shadow:0 4px 0 #b86a80}
+.btn:hover{transform:translateY(1px);box-shadow:0 3px 0 #b86a80}
+.btn:focus-visible,.copy:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.ver{font-family:var(--pixel);font-size:12px;color:var(--mint);border:1px solid #2f4a41;border-radius:999px;padding:5px 10px}
+.win{font-size:13px;color:var(--faint)}
+.latest{font-size:13px;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.latest:hover{color:var(--rose)}
+.sample{display:flex;gap:14px;align-items:center;font-size:16px;color:var(--text);background:#2a2316;
+  border:2px solid var(--gold);border-radius:14px;padding:14px 18px}
+.sample b{font-family:var(--pixel);font-size:13px;letter-spacing:.06em;color:#1a1408;background:var(--gold);font-weight:400;
+  padding:4px 8px;border-radius:6px;white-space:nowrap}
+.credit{font-size:13px;color:var(--faint);margin-top:-8px}
+.credit em{font-style:normal;color:var(--muted)}
+.smp{position:relative}
+.smp::after{content:"SAMPLE";position:absolute;top:10px;left:10px;font-family:var(--pixel);font-size:10px;letter-spacing:.06em;
+  color:#1a1408;background:var(--gold);padding:2px 6px;border-radius:5px;pointer-events:none;opacity:.92}
+.room.smp::after{top:8px;left:8px;font-size:9px}
+.ipad{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center;background:var(--card);
+  border:2px solid var(--mint);border-radius:22px;padding:26px}
+@media (max-width:760px){.ipad{grid-template-columns:1fr}}
+.ipad h3{font-size:clamp(22px,3.4vw,30px)}
+.ipad h3 em{font-style:normal;color:var(--mint)}
+.ipad p{color:var(--muted);margin-top:10px}
+.ipad ol{margin:14px 0 0;padding-left:1.3em;color:var(--text);display:grid;gap:6px}
+.ipad small{display:block;margin-top:10px;color:var(--faint);font-size:13px}
+.soon{margin-top:22px;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;border:2px dashed #5a4a66;
+  border-radius:20px;padding:22px;background:repeating-linear-gradient(135deg,transparent 0 14px,rgba(229,146,168,.05) 14px 28px)}
+.soon .tag{display:block;margin-bottom:6px}
+.soon h3{font-size:24px}
+.soon p{color:var(--muted);margin-top:6px}
+.soon .icon{width:64px;height:64px;border-radius:16px;background:var(--card);display:grid;place-items:center}
+.soon .icon svg{width:36px;height:36px;stroke:var(--rose);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.zoomable{cursor:zoom-in}
+#lb{position:fixed;inset:0;z-index:50;background:rgba(10,8,14,.92);display:flex;align-items:center;justify-content:center;
+  padding:max(16px,env(safe-area-inset-top,0px)) 16px;overflow:auto}
+#lb img{max-width:100%;max-height:100%;width:auto;height:auto;border-radius:10px;cursor:zoom-in;image-rendering:auto}
+#lb.full{align-items:flex-start;justify-content:flex-start}
+#lb.full img{max-width:none;max-height:none;cursor:zoom-out;margin:auto}
+#lb .x{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:14px;font-family:var(--display);font-size:16px;color:var(--text);
+  background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 14px;cursor:pointer}
+#lb .hint{position:fixed;bottom:calc(12px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);font-size:13px;color:var(--muted);
+  background:var(--card);border-radius:999px;padding:6px 14px;white-space:nowrap}
+footer .credits{font-size:14px;color:var(--muted);line-height:1.9}
+footer .credits b{font-weight:400;color:var(--text)}
+.bare img{filter:drop-shadow(0 16px 36px rgba(0,0,0,.5))}
+.frame{border-radius:14px;overflow:hidden;background:#000}
+figure{margin:0}
+.cap{font-size:13px;color:var(--faint);margin-top:8px}
+
+section{padding-block:64px 8px}
+.sec-head{display:grid;gap:10px;margin-bottom:26px}
+.sec-head h2{font-size:clamp(26px,4vw,38px)}
+.sec-head p{color:var(--muted);font-size:17px}
+.split{display:grid;grid-template-columns:1.35fr 1fr;gap:28px;align-items:center}
+@media (max-width:760px){.split{grid-template-columns:1fr}}
+.list{display:grid;gap:14px;margin:0;padding:0;list-style:none}
+.list li{display:grid;grid-template-columns:18px 1fr;gap:8px;align-items:start}
+.list li::before{content:"";width:4px;height:4px;margin:10px 0 0 3px;background:var(--rose);
+  box-shadow:4px 0 0 var(--rose),0 4px 0 var(--rose),4px 4px 0 #b86a80}
+.list b{font-family:var(--display);font-weight:400;font-size:18px;display:block;line-height:1.4}
+.list span{color:var(--muted);font-size:15px}
+
+.rooms{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px}
+.room{background:var(--bg2);border-radius:16px;padding:10px 10px 12px;display:grid;gap:6px;justify-items:center;text-align:center}
+.room img{image-rendering:pixelated;width:100%}
+.room span{font-size:14px;color:var(--muted)}
+.room.add{border:2px dashed var(--line);background:none;align-content:center;padding:18px 14px;gap:10px}
+.room.add .file{font-family:var(--pixel);font-size:13px;color:var(--gold)}
+.room.add p{font-size:14px;color:var(--muted)}
+
+.mood{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:700px){.mood{grid-template-columns:1fr}}
+.mood figure{background:#15121a;border-radius:16px;padding:12px;display:grid;gap:8px}
+.mood img{image-rendering:pixelated}
+.mood figcaption{font-size:15px;color:var(--muted)}
+.mood figcaption b{display:block;font-family:var(--display);font-weight:400;font-size:18px;color:var(--text)}
+.knobs{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.knob{font-size:14px;padding:6px 12px;border-radius:999px;background:var(--card);border:1px solid var(--line)}
+.knob b{font-weight:400;color:var(--rose)}
+
+.steps{display:grid;gap:16px;counter-reset:s;margin:0;padding:0;list-style:none}
+.steps li{counter-increment:s;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start}
+.steps li::before{content:counter(s);font-family:var(--pixel);font-size:15px;width:34px;height:34px;display:grid;place-items:center;
+  background:var(--card);border:2px solid var(--gold);color:var(--gold)}
+.steps b{font-family:var(--display);font-weight:400;font-size:18px;display:block;line-height:1.4}
+.steps span{color:var(--muted);font-size:15px}
+.file{font-family:var(--pixel);font-size:12px;color:var(--gold)}
+.popup-shot{max-width:440px;justify-self:center}
+
+.screens{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+@media (max-width:760px){.screens{grid-template-columns:1fr}}
+.screens figure{display:grid;gap:10px;align-content:start}
+.screens .frame img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:left top}
+.screens figcaption b{font-family:var(--display);font-weight:400;font-size:19px;display:block}
+.screens figcaption{color:var(--muted);font-size:15px}
+
+.perks{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.perk{background:var(--card);border-radius:16px;padding:16px;display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start}
+.perk svg{width:28px;height:28px;stroke:var(--rose);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.perk b{font-family:var(--display);font-weight:400;font-size:17px;display:block;line-height:1.4}
+.perk span{color:var(--muted);font-size:14px;line-height:1.65;display:block;margin-top:2px}
+.perk span.kbd{display:inline;margin:0;color:var(--text)}
+.kbd{font-family:ui-monospace,Consolas,monospace;font-size:12px;background:var(--bg);border:1px solid var(--line);border-bottom-width:2px;
+  border-radius:6px;padding:1px 6px;color:var(--text);white-space:nowrap}
+
+.share-row{display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:center}
+@media (max-width:700px){.share-row{grid-template-columns:1fr}}
+.share-row figure{max-width:300px}
+
+.install{background:var(--card);border-radius:22px;padding:28px;display:grid;gap:22px}
+.link-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.link{font-family:ui-monospace,Consolas,monospace;font-size:13px;background:var(--bg);border:1px solid var(--line);border-radius:10px;
+  padding:10px 12px;flex:1 1 320px;min-width:0;overflow-wrap:anywhere;word-break:break-all;user-select:all;color:var(--muted)}
+.copy{font-family:var(--display);font-size:16px;padding:10px 16px;border-radius:12px;border:1px solid var(--line);background:var(--bg2);color:var(--text);cursor:pointer}
+.note{font-size:14px;color:var(--faint)}
+.note .nowrap{word-break:break-all;overflow-wrap:anywhere}
+
+footer{padding-block:70px 50px;display:grid;gap:8px;justify-items:center;text-align:center}
+footer .sig{font-family:var(--pixel);font-size:14px;letter-spacing:.06em}
+footer a{color:var(--rose);text-decoration:none}
+footer a:hover{text-decoration:underline}
+footer p{color:var(--faint);font-size:14px}
+
+html.poster .copy{display:none}
+html.poster .zoomable{cursor:default}
+html.poster .link{flex-basis:100%;font-size:15px;color:var(--text)}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <div class="top">
+    <div class="brand"><i aria-hidden="true"></i>Focus Buddy</div>
+    <div class="by">바이브 코딩으로 만든 프로그램이에요</div>
+  </div>
+
+  <header class="hero">
+    <span class="tag">for illustrators · windows</span>
+    <h1>그림 그릴 때 옆에 붙어 있는<br><em>작업 친구</em>, Focus Buddy</h1>
+    <p class="lead">작업 시간 재기, 마감 챙기기, 수입 정리까지 한 곳에서 해요.<br>
+      내 캐릭터가 작은 도트 방에 살면서 옆에서 같이 일해 줘요.<br>
+      윈도우용 무료 프로그램이에요!</p>
+    <div class="cta">
+      <a class="btn" href="https://github.com/shuna077/focusbuddy-releases/releases/download/v2.21/FocusBuddy-Setup-2.21.zip">↓ 무료로 받기</a>
+      <span class="ver">v2.21</span>
+      <span class="win">Windows 10 · 11</span>
+      <a class="latest" href="https://github.com/shuna077/focusbuddy-releases/releases/latest/download/FocusBuddy-Setup.zip">항상 최신 버전 링크</a>
+    </div>
+    <p class="sample"><b>SAMPLE</b><span>화면 속 일정, 이름, 금액, 할 일은 <strong>모두 샘플</strong>이에요.<br>실제 사람이나 작업과는 관계없어요.</span></p>
+    <p class="credit">이미지 출처 · 배경 일러스트 <em>모도님</em> · SD 캐릭터 <em>개농님</em> · 프로필 사진 <em>wash님</em> · 배너 <em>차돌님</em></p>
+    <figure class="bare smp">
+      <img src="img/hero.webp" width="1564" height="765" alt="홈 화면과 오른쪽 위의 캐릭터 창. 시계, 달력, 집중 타이머, 디데이, 할 일 위젯 가운데에 캐릭터가 서 있다">
+    </figure>
+  </header>
+
+  <section id="home">
+    <div class="sec-head">
+      <span class="tag">home</span>
+      <h2>켜 두기만 하면 알아서 재 줘요</h2>
+      <p>그리는 동안엔 타이머가 저절로 돌아가요.<br>손을 놓으면 ‘쉬는 중’으로 바뀌고, 오늘 얼마나 그렸는지 바로 보여요.</p>
+    </div>
+    <div class="split">
+      <figure class="frame smp"><img src="img/calendar.webp" width="1360" height="765" alt="캘린더 화면. 달력에 작업 기간 막대와 오른쪽에 오늘 할 일, 기한 초과, 다가오는 일정 목록"></figure>
+      <ul class="list">
+        <li><div><b>자동 집중 타이머</b><span>화면(또는 정해 둔 창)이 움직이는 동안만 시간이 쌓여요.<br>멍때린 시간은 빠져요.</span></div></li>
+        <li><div><b>디데이 · 오늘의 할 일 · 캘린더</b><span>마감이 가까우면 캐릭터가 말풍선으로 알려 줘요.</span></div></li>
+        <li><div><b>음악 위젯</b><span>스포티파이, 유튜브, 멜론처럼 지금 재생 중인 음악과 영상을 알아서 띄워 줘요.<br>위젯에서 바로 재생, 일시정지, 다음 곡도 돼요.</span></div></li>
+        <li><div><b>내 맘대로 꾸미는 홈</b><span>배경 그림에서 색을 뽑아 테마가 저절로 맞춰져요.<br>스티커, 음악, 자주 쓰는 곳 바로가기도 붙일 수 있어요.</span></div></li>
+      </ul>
+    </div>
+    <div class="ipad">
+      <div>
+        <span class="tag" style="color:var(--mint)">ipad ok</span>
+        <h3><em>아이패드</em>로 그려도 돼요!</h3>
+        <p>Focus Buddy는 화면의 움직임을 보고 시간을 재요.<br>그래서 아이패드 작업도 그대로 기록할 수 있어요.</p>
+        <ol>
+          <li>미러링 프로그램으로 아이패드 화면을 컴퓨터에 띄워요.</li>
+          <li>설정 → 타이머·감지 → 바꾸기에서 그 창을 등록해요.</li>
+          <li>끝! 아이패드에서 그리는 동안만 시간이 쌓여요.</li>
+        </ol>
+        <small>마우스 움직임까지 세고 싶지 않으면 ‘마우스 움직임도 집중으로 치기’를 꺼 두세요.</small>
+      </div>
+      <figure class="frame smp"><img src="img/set_timer.webp" width="820" height="640" alt="설정의 타이머·움직임 감지 화면. 감지 대상, 민감도, 쉬는 중으로 바뀌기까지, 마우스 움직임, 하루 목표, 휴식 알림"></figure>
+    </div>
+  </section>
+
+  <section id="room">
+    <div class="sec-head">
+      <span class="tag">character window</span>
+      <h2>내 캐릭터가 사는 작은 방</h2>
+      <p>캐릭터 창은 바탕화면 위에 따로 떠 있어요.<br>방 배경을 골라 두면 미니홈피처럼 꾸며지고, 말풍선으로 마감이랑 상태도 알려 줘요.</p>
+    </div>
+    <div class="rooms">
+      <div class="room smp"><img src="img/room_pink.webp" width="389" height="375" alt="딸기우유 방"><span>딸기우유 방</span></div>
+      <div class="room smp"><img src="img/room_mint.webp" width="389" height="375" alt="민트 작업실"><span>민트 작업실</span></div>
+      <div class="room smp"><img src="img/room_night.webp" width="389" height="375" alt="별밤 작업방"><span>별밤 작업방</span></div>
+      <div class="room smp"><img src="img/room_angel.webp" width="389" height="375" alt="구름 라벤더 방"><span>구름 라벤더 방</span></div>
+      <div class="room smp"><img src="img/room_wood.webp" width="389" height="375" alt="원목 아틀리에"><span>원목 아틀리에</span></div>
+      <div class="room add"><span class="file">+ .FBROOM</span><p>방 파일을 받으면<br>더블클릭 한 번으로<br>새 방이 추가돼요</p></div>
+    </div>
+    <div class="soon">
+      <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.7 1.8 1.8.7-1.8.7L19 21l-.7-1.8-1.8-.7 1.8-.7z"/></svg></div>
+      <div>
+        <span class="tag">coming soon</span>
+        <h3>방 꾸미기, 곧 나와요!</h3>
+        <p>가구를 골라 놓고 벽지랑 바닥을 바꿔서<br>나만의 방을 직접 꾸밀 수 있게 준비하고 있어요.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="mood">
+    <div class="sec-head">
+      <span class="tag">new · mood</span>
+      <h2>방 분위기에 캐릭터도 맞춰요</h2>
+      <p>어두운 방에 밝은 캐릭터가 붕 떠 보일 때가 있죠.<br>캐릭터만 살짝 어둡게 하고, 뒤에서 빛이 비치는 역광을 넣을 수 있어요.<br>방마다 따로 기억해요.</p>
+    </div>
+    <div class="mood">
+      <figure class="smp"><img src="img/mood_1.webp" width="389" height="358" alt="진홍 고딕 침실, 원래 색의 캐릭터"><figcaption><b>원래 색</b>그대로 둔 모습이에요</figcaption></figure>
+      <figure class="smp"><img src="img/mood_2.webp" width="389" height="358" alt="캐릭터를 어둡게 하고 한쪽에서 역광"><figcaption><b>어둡게 + 역광</b>촛불이 옆에 있는 느낌이에요</figcaption></figure>
+      <figure class="smp"><img src="img/mood_3.webp" width="389" height="358" alt="캐릭터 윤곽 전체가 빛나는 뒤 역광"><figcaption><b>뒤 (전체) 역광</b>윤곽이 은은하게 빛나요</figcaption></figure>
+    </div>
+    <div class="knobs" aria-label="조절할 수 있는 것">
+      <span class="knob">어둡게 <b>0–80%</b></span>
+      <span class="knob">역광 방향 <b>왼쪽 · 오른쪽 · 위 · 뒤</b></span>
+      <span class="knob">강도 <b>0–100%</b></span>
+      <span class="knob">두께 <b>1–10</b></span>
+      <span class="knob">색 <b>촛불 · 달빛 · 새벽 · 형광 · 직접</b></span>
+    </div>
+  </section>
+
+  <section id="gift">
+    <div class="sec-head">
+      <span class="tag">gift a room</span>
+      <h2>방을 친구한테 선물할 수 있어요</h2>
+      <p>꾸민 방을 파일 하나로 뽑아서 보내면, 친구는 더블클릭만 하면 돼요.<br>직접 그린 그림으로 방을 만들 수도 있어요.</p>
+    </div>
+    <div class="split">
+      <ol class="steps">
+        <li><div><b>캐릭터 창 → 배경 고르기 창</b><span>방 목록 아래에 버튼들이 모여 있어요.<br>창은 끌어서 원하는 곳에 둘 수 있어요.</span></div></li>
+        <li><div><b>선물용으로 내보내기</b><span>방 이름이랑 한마디 메시지를 적으면<br><span class="file">.fbroom</span> 파일이 생겨요.</span></div></li>
+        <li><div><b>친구가 더블클릭</b><span>친구 Focus Buddy에 방이 쏙 들어가고<br>메시지가 떠요.</span></div></li>
+        <li><div><b>그림으로 방 만들기</b><span>가이드 그림 위에 방을 그려서 넣으면 나만의 방이 돼요.<br>캐릭터 앞에 올 물건도 따로 그릴 수 있어요.</span></div></li>
+      </ol>
+      <figure class="popup-shot bare smp"><img src="img/popup.webp" width="511" height="838" alt="캐릭터 창 배경 고르기 창. 기본 방, 내 방 목록, 방 파일 버튼, 방 크기와 그림자, 캐릭터 어둡게와 역광 설정"></figure>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="sec-head">
+      <span class="tag">planner · stats · income</span>
+      <h2>외주랑 커미션도 같이 챙겨요</h2>
+      <p>마감 관리, 작업 기록, 돈 정리를 그림 작업에 맞춰 만들었어요.</p>
+    </div>
+    <div class="screens">
+      <figure><div class="frame smp"><img src="img/planner.webp" width="752" height="765" alt="플래너. 분류별 프로젝트 목록과 진행 막대, 마감 위험 알림"></div>
+        <figcaption><b>플래너</b>러프 → 선화 → 밑색 → 완성처럼 단계를 체크하면 진행도가 올라가요.<br>마감이 위험한 건 따로 알려 줘요.</figcaption></figure>
+      <figure><div class="frame smp"><img src="img/stats.webp" width="1360" height="765" alt="통계. 최근 30일 집중 시간 막대그래프와 분류별 작업 시간"></div>
+        <figcaption><b>통계</b>하루하루 얼마나 그렸는지, 어떤 작업에 시간을 썼는지 한눈에 보여요.<br>그날 컨디션도 남길 수 있어요.</figcaption></figure>
+      <figure><div class="frame smp"><img src="img/income.webp" width="1360" height="765" alt="수입 개요. 월별 수입 그래프, 이번 달 슬롯, 미수금"></div>
+        <figcaption><b>수입</b>커미션, 고객, 지출, 가격표를 정리해요.<br>이번 달 슬롯이랑 아직 못 받은 돈도 챙겨 줘요.</figcaption></figure>
+      <figure><div class="frame smp"><img src="img/board.webp" width="1360" height="765" alt="보드. 할 일, 진행 중, 검토·수정, 완료 칸으로 나뉜 작업 카드"></div>
+        <figcaption><b>보드</b>할 일 → 진행 중 → 검토·수정 → 완료.<br>카드를 끌어서 옮기면 상태가 바뀌어요.</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="new">
+    <div class="sec-head">
+      <span class="tag">new · v2.17 – v2.21</span>
+      <h2>꾸미기가 더 쉬워졌어요</h2>
+      <p>처음 쓰는 사람도 금방 예쁘게 꾸밀 수 있게 다듬었어요.</p>
+    </div>
+    <div class="perks">
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.2 0 1.8-.8 1.8-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H17a4 4 0 0 0 4-4c0-4.4-4-8.2-9-8.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7" r="1.2"/><circle cx="15" cy="7.5" r="1.2"/></svg><div><b>기본 테마 5개</b><span>밤하늘 집중, 노을 카페, 딸기우유, 민트 스튜디오, 구름 라벤더.<br>누르면 색과 배경, 캐릭터 창 방까지 한 번에 바뀌어요.</span></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg><div><b>배경 영역 고르기</b><span>배경 그림에서 홈 화면에 보일 부분을 네모로 골라요.<br>나중에 다시 고를 수도 있어요.</span></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.3-5.7M4 4v4h4"/></svg><div><b>되돌리기 · 미리보기 · 저장</b><span>꾸미다가 <span class="kbd">Ctrl+Z</span>로 되돌리고, 미리보기로 완성된 모습을 확인해요.<br>마음에 안 들면 취소 한 번으로 처음 상태로.</span></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.3 9.3a2.8 2.8 0 0 1 5.4 1c0 1.9-2.7 2.3-2.7 4.2"/><path d="M12 17.6v.01"/></svg><div><b>앱 안 기능 설명</b><span>오른쪽 위 물음표(?) 아이콘이나 <span class="kbd">F1</span>을 누르면 모든 기능 설명이 떠요.<br>검색하고 바로 그 설정으로 갈 수 있어요.</span></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><div><b>오류가 나면 바로 알리기</b><span>문제가 생기면 ‘만든 사람에게 보내기’ 한 번이면 끝.<br>보내기 전에 내용을 보여 주고, 개인 정보는 가려져요.</span></div></div>
+    </div>
+  </section>
+
+  <section id="perks">
+    <div class="sec-head">
+      <span class="tag">little things</span>
+      <h2>소소하게 편한 기능들</h2>
+      <p>매일 켜 두는 프로그램이라, 귀찮은 걸 줄이는 데 신경 썼어요.</p>
+    </div>
+    <div class="perks">
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg><div><b>단축키</b><span><span class="kbd">Ctrl+Alt+P</span> 일시정지<br><span class="kbd">Ctrl+Alt+C</span> 캐릭터 창<br><span class="kbd">Ctrl+Alt+S</span> 상태 바꾸기</span></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg><div><b>켜면 알아서 시작</b><span>컴퓨터를 켜면 트레이에서 조용히 기록을 시작해요.</span></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3.5c0 1-1 1.5-1 2.5M12 3.5c0 1-1 1.5-1 2.5"/></svg><div><b>휴식 알림</b><span>오래 쉬지 않고 그리면 캐릭터가 쉬자고 말해 줘요.</span></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><div><b>마감 위험 알림</b><span>진행이 늦은 일정이 있으면 하루 한 번 말풍선으로 알려 줘요.</span></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg><div><b>금액 가리기</b><span>버튼 하나로 숨기고, 공유 창을 켜면 저절로 가려져요.</span></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg><div><b>메시지 템플릿</b><span>견적, 입금 확인, 러프 전달 문구에 고객 이름과 금액이 자동으로 채워져요.</span></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg><div><b>환율 자동 계산</b><span>달러, 위안, 엔화로 받은 돈도 원화로 합쳐서 보여 줘요.</span></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg><div><b>구글 캘린더 불러오기</b><span>원래 쓰던 일정도 같이 볼 수 있어요.</span></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg><div><b>내 꾸미기 저장</b><span>테마, 배경, 배치, 스티커, 캐릭터 조합을 슬롯에 저장해 두고 한 번에 바꿔요.</span></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19l8-8"/></svg><div><b>가볍게 돌아가요</b><span>켜 두기만 해도 컴퓨터에 부담이 적게 다듬었어요.<br>노트북이면 저사양 모드로 더 가볍게.</span></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.3-5.7M4 4v4h4"/></svg><div><b>버튼 하나로 업데이트</b><span>새 버전이 이상하면 이전 버전으로 알아서 돌아가요.</span></div></div>
+    </div>
+  </section>
+
+  <section id="share">
+    <div class="share-row">
+      <figure class="bare smp"><img src="img/share.webp" width="340" height="470" alt="공유 창. 캐릭터와 디데이, 집중 타이머"></figure>
+      <div class="sec-head" style="margin:0">
+        <span class="tag">stream · capture</span>
+        <h2>작업 방송이랑<br>자랑용 캡처도 돼요</h2>
+        <p>공유 창을 OBS 윈도우 캡처로 잡으면 방송 화면에 캐릭터랑 타이머가 올라가요.<br>
+          캡처 버튼으로 홈 화면이나 캐릭터 창만 깔끔하게 찍을 수도 있어요.<br>
+          말풍선 빼기, 2배 크기 저장도 돼요.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="install">
+    <div class="install">
+      <div class="sec-head" style="margin:0">
+        <span class="tag">install</span>
+        <h2>받는 법은 간단해요</h2>
+      </div>
+      <ol class="steps">
+        <li><div><b>아래 링크에서 zip 받기</b><span>파일 이름에 버전이 붙어서 받아져요 (FocusBuddy-Setup-2.21.zip).</span></div></li>
+        <li><div><b>압축 풀고 설치.bat 더블클릭</b><span>zip을 오른쪽 클릭 → 압축 풀기를 먼저 해 주세요.<br>설치가 끝나면 바탕화면에 아이콘이 생겨요.<br>폴더 안에 설치 안내, 버전 파일(Focus Buddy v2.21.txt), 기능 소개 그림도 들어 있어요.</span></div></li>
+        <li><div><b>업데이트는 버튼 하나로</b><span>새 버전이 나오면 켤 때 알려 줘요.<br>설정 → 일반 → 업데이트 확인을 눌러도 돼요. 내 데이터는 그대로예요.</span></div></li>
+      </ol>
+      <div class="link-row">
+        <span class="link" id="dl">https://github.com/shuna077/focusbuddy-releases/releases/download/v2.21/FocusBuddy-Setup-2.21.zip</span>
+        <button class="copy" id="copy" type="button">링크 복사</button>
+      </div>
+      <p class="note">항상 최신 버전 고정 링크 (파일 이름엔 버전 없음) · <span class="nowrap">https://github.com/shuna077/focusbuddy-releases/releases/latest/download/FocusBuddy-Setup.zip</span></p>
+      <p class="note">내 일정이나 수입 기록은 내 컴퓨터에만 저장돼요.<br>어디로도 보내지 않아요.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p class="credits">이미지 출처<br><b>배경 일러스트</b> 모도님 · <b>SD 캐릭터</b> 개농님<br><b>프로필 사진</b> wash님 · <b>배너</b> 차돌님</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var b=document.getElementById('copy'), t=document.getElementById('dl');
+  if(!b) return;
+  b.addEventListener('click',function(){
+    var txt=t.textContent.trim();
+    function sel(){var r=document.createRange();r.selectNodeContents(t);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='선택했어요 · Ctrl+C';}
+    try{navigator.clipboard.writeText(txt).then(function(){b.textContent='복사했어요!';},sel);}catch(e){sel();}
+  });
+})();
+(function(){
+  var imgs=document.querySelectorAll('figure img, .room img');
+  var lb=null;
+  function close(){ if(lb){ lb.remove(); lb=null; document.removeEventListener('keydown',key); } }
+  function key(e){ if(e.key==='Escape') close(); }
+  function open(src, alt){
+    close();
+    lb=document.createElement('div'); lb.id='lb'; lb.setAttribute('role','dialog'); lb.setAttribute('aria-label','크게 보기');
+    var im=new Image(); im.src=src; im.alt=alt||'';
+    var x=document.createElement('button'); x.className='x'; x.type='button'; x.textContent='닫기 ✕';
+    var h=document.createElement('div'); h.className='hint'; h.textContent='그림을 누르면 원본 크기 · 바깥을 누르면 닫혀요';
+    lb.appendChild(im); lb.appendChild(x); lb.appendChild(h);
+    im.addEventListener('click',function(e){ e.stopPropagation(); lb.classList.toggle('full'); });
+    x.addEventListener('click',close);
+    lb.addEventListener('click',close);
+    document.addEventListener('keydown',key);
+    document.body.appendChild(lb); x.focus();
+  }
+  imgs.forEach(function(im){
+    im.classList.add('zoomable'); im.tabIndex=0;
+    im.addEventListener('click',function(){ open(im.currentSrc||im.src, im.alt); });
+    im.addEventListener('keydown',function(e){ if(e.key==='Enter'){ open(im.currentSrc||im.src, im.alt); } });
+  });
+})();
+</script>
+
+</body>
+</html>
