@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://shuna077.github.io/focusbuddy/gift/character-rooms/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://shuna077.github.io/focusbuddy/gift/character-rooms/og.png">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23e8883a'/%3E%3Cpath d='M8 15 L16 8 L24 15 L24 24 L8 24 Z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23e592a8'/%3E%3Cpath d='M8 15 L16 8 L24 15 L24 24 L8 24 Z' fill='%23fff'/%3E%3C/svg%3E">
 <title>캐릭터 방</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,40 +20,40 @@
 <style>
 :root{
   color-scheme: dark;
-  --bg:#0c1120; --bg2:#121a2e; --card:#161f36; --line:#27345a;
-  --text:#eef2fa; --muted:#aab4cc; --faint:#7d88a4;
-  --orange:#e8883a; --orange-ink:#241206; --orange-deep:#b4602a; --cyan:#8fdcff;
+  --bg:#17151c; --bg2:#1d1a23; --card:#231f2a; --line:#382f40;
+  --text:#f4eef2; --muted:#b9adbd; --faint:#8a7f8f;
+  --rose:#e592a8; --rose-ink:#2a1219; --rose-deep:#b86a80; --gold:#d8b45a; --mint:#8fd6bb;
   --display:"Jua","Gowun Dodum","Noto Sans CJK KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
   --body:"Gowun Dodum","Noto Sans CJK KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
   --pixel:"Silkscreen","Courier New",monospace;
 }
 *{box-sizing:border-box}
-body{margin:0;background:radial-gradient(120% 50% at 50% 0%,#18244a 0%,var(--bg) 62%) no-repeat,var(--bg);color:var(--text);
+body{margin:0;background:var(--bg);color:var(--text);
   font-family:var(--body);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:anywhere}
 .wrap{max-width:1040px;margin:0 auto;padding-inline:20px;padding-block:34px 60px;display:grid;gap:36px}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
 h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;line-height:1.3}
 p{margin:0}
-.tag{font-family:var(--pixel);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan)}
+.tag{font-family:var(--pixel);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
 
 header{display:grid;gap:14px}
 h1{font-size:clamp(34px,6.4vw,54px)}
 .lead{font-size:17px;color:var(--muted);max-width:36em}
-.count{font-family:var(--pixel);font-size:12px;color:var(--faint);letter-spacing:.06em}
+.count{font-family:var(--pixel);font-size:12px;color:var(--mint);border:1px solid #2f4a41;border-radius:999px;padding:5px 10px;letter-spacing:.06em}
 
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:14px;background:var(--orange);
-  color:var(--orange-ink);font-family:var(--display);font-size:18px;text-decoration:none;box-shadow:0 4px 0 var(--orange-deep)}
-.btn:hover{transform:translateY(1px);box-shadow:0 3px 0 var(--orange-deep)}
-.btn.sub{background:var(--bg2);color:var(--text);box-shadow:0 4px 0 #0a0f1c;border:1px solid var(--line);font-size:16px;padding:10px 16px}
-.btn.sub:hover{box-shadow:0 3px 0 #0a0f1c}
-.btn:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:14px;background:var(--rose);
+  color:var(--rose-ink);font-family:var(--display);font-size:18px;text-decoration:none;box-shadow:0 4px 0 var(--rose-deep)}
+.btn:hover{transform:translateY(1px);box-shadow:0 3px 0 var(--rose-deep)}
+.btn.sub{background:var(--bg2);color:var(--text);box-shadow:0 4px 0 #0e0c12;border:1px solid var(--line);font-size:16px;padding:10px 16px}
+.btn.sub:hover{box-shadow:0 3px 0 #0e0c12;border-color:var(--rose)}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .btn small{font-family:var(--body);font-size:13px;opacity:.75}
 .cta{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center}
 
 .rooms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .room{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:grid;grid-template-rows:auto 1fr}
-.room figure{margin:0;background:#070b16;display:grid;place-items:center;padding:10px}
+.room figure{margin:0;background:#110f15;display:grid;place-items:center;padding:10px}
 .room img{image-rendering:pixelated;width:100%;max-width:440px}
 .room .txt{padding:18px 20px 22px;display:grid;gap:8px;align-content:start;justify-items:start}
 .room h2{font-size:24px}
@@ -64,7 +64,7 @@ h1{font-size:clamp(34px,6.4vw,54px)}
 .how{border-top:1px solid var(--line);padding-top:28px;display:grid;gap:14px}
 .how h3{font-size:22px}
 .how ol{margin:0;padding-left:1.3em;display:grid;gap:8px}
-.how li::marker{color:var(--orange);font-family:var(--pixel);font-size:13px}
+.how li::marker{color:var(--rose);font-family:var(--pixel);font-size:13px}
 .note{font-size:14px;color:var(--faint)}
 code{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:14px;background:var(--bg2);padding:1px 6px;border-radius:5px}
 footer{font-size:13px;color:var(--faint);display:flex;flex-wrap:wrap;gap:6px 14px}
