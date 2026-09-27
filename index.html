@@ -171,6 +171,41 @@ footer a{color:var(--rose);text-decoration:none}
 footer a:hover{text-decoration:underline}
 footer p{color:var(--faint);font-size:14px}
 
+/* 기능 상세 설명 */
+.guide-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:-8px 0 18px}
+.guide-toc{display:flex;flex-wrap:wrap;gap:6px}
+.guide-toc a{font-size:13px;padding:5px 11px;border-radius:999px;background:var(--card);border:1px solid var(--line);
+  color:var(--muted);text-decoration:none}
+.guide-toc a:hover{color:var(--rose);border-color:var(--rose)}
+.guide{display:grid;gap:10px}
+.guide details{background:var(--card);border:1px solid var(--line);border-radius:16px;scroll-margin-top:16px}
+.guide details[open]{border-color:#5a4a66}
+.guide summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;
+  padding:14px 18px;font-family:var(--display);font-size:19px}
+.guide summary::-webkit-details-marker{display:none}
+.guide summary svg{width:26px;height:26px;stroke:var(--rose);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.guide summary small{font-family:var(--body);font-size:13px;color:var(--faint);display:block;line-height:1.4}
+.guide summary::after{content:"+";font-family:var(--pixel);font-size:18px;color:var(--gold);width:28px;height:28px;display:grid;
+  place-items:center;border:1px solid var(--line);border-radius:8px}
+.guide details[open] summary::after{content:"−"}
+.guide summary:focus-visible{outline:3px solid var(--gold);outline-offset:-3px;border-radius:16px}
+.guide .body{padding:2px 22px 20px 64px;display:grid;gap:14px;color:var(--muted);font-size:15px}
+@media (max-width:640px){.guide .body{padding:2px 16px 18px 16px}}
+.guide h4{margin:0;font-family:var(--display);font-weight:400;font-size:17px;color:var(--text)}
+.guide ul{margin:6px 0 0;padding-left:1.1em;display:grid;gap:4px}
+.guide li::marker{color:var(--rose)}
+.guide b{font-weight:400;color:var(--text)}
+.guide .tip{font-size:14px;color:var(--mint)}
+.guide table{border-collapse:collapse;width:100%;font-size:14px}
+.guide td{padding:6px 8px;border-top:1px solid var(--line);vertical-align:top}
+.guide td:first-child{white-space:nowrap;color:var(--text);width:1%}
+.new-dot{display:inline-block;font-family:var(--pixel);font-size:10px;letter-spacing:.05em;color:var(--rose-ink);background:var(--rose);
+  border-radius:5px;padding:1px 5px;margin-left:6px;vertical-align:2px}
+.all-btn{font-family:var(--display);font-size:15px;padding:6px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg2);
+  color:var(--text);cursor:pointer}
+.all-btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+html.poster .all-btn{display:none}
+
 html.poster .copy{display:none}
 html.poster .zoomable{cursor:default}
 html.poster .link{flex-basis:100%;font-size:15px;color:var(--text)}
@@ -192,8 +227,8 @@ html.poster .link{flex-basis:100%;font-size:15px;color:var(--text)}
       내 캐릭터가 작은 도트 방에 살면서 옆에서 같이 일해 줘요.<br>
       윈도우용 무료 프로그램이에요!</p>
     <div class="cta">
-      <a class="btn" href="https://github.com/shuna077/focusbuddy-releases/releases/download/v2.22/FocusBuddy-Setup-2.22.zip">↓ 무료로 받기</a>
-      <span class="ver">v2.22</span>
+      <a class="btn" href="https://github.com/shuna077/focusbuddy-releases/releases/download/v2.23/FocusBuddy-Setup-2.23.zip">↓ 무료로 받기</a>
+      <span class="ver">v2.23</span>
       <span class="win">Windows 10 · 11</span>
       <a class="latest" href="https://github.com/shuna077/focusbuddy-releases/releases/latest/download/FocusBuddy-Setup.zip">항상 최신 버전 링크</a>
     </div>
@@ -239,7 +274,7 @@ html.poster .link{flex-basis:100%;font-size:15px;color:var(--text)}
     <div class="sec-head">
       <span class="tag">character window</span>
       <h2>내 캐릭터가 사는 작은 방</h2>
-      <p>캐릭터 창은 바탕화면 위에 따로 떠 있어요.<br>방 배경을 골라 두면 미니홈피처럼 꾸며지고, 말풍선으로 마감이랑 상태도 알려 줘요.</p>
+      <p>캐릭터 창은 바탕화면 위에 따로 떠 있어요.<br>방 배경을 골라 두면 미니홈피처럼 꾸며지고, 말풍선으로 마감이랑 상태도 알려 줘요.<br>친구 캐릭터를 여러 명 같이 세울 수도 있어요.</p>
     </div>
     <div class="rooms">
       <div class="room smp"><img src="img/room_pink.webp" width="389" height="375" alt="딸기우유 방"><span>딸기우유 방</span></div>
@@ -314,6 +349,26 @@ html.poster .link{flex-basis:100%;font-size:15px;color:var(--text)}
     </div>
   </section>
 
+  <section id="new23">
+    <div class="sec-head">
+      <span class="tag">new · v2.23</span>
+      <h2>캐릭터 친구들이 한 방에 모였어요</h2>
+      <p>캐릭터 창에 여러 명을 세우고, 자리도 마음대로 옮길 수 있어요. 색 고르기, 캡처, 백업도 한층 편해졌어요.</p>
+    </div>
+    <div class="perks">
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/><path d="M2.5 20c0-3.5 2.9-6 6.5-6s6.5 2.5 6.5 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 6.5M18 14.3c2 .8 3.5 2.9 3.5 5.7"/></svg><div><b>여러 캐릭터</b><span>캐릭터 창 오른쪽 클릭 → 여러 캐릭터 → 캐릭터 추가. 친구 캐릭터를 같은 방에 세우고 크기·좌우 뒤집기·앞뒤를 정해요.</span></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18"/><path d="M9 6l3-3 3 3M9 18l3 3 3-3M6 9l-3 3 3 3M18 9l3 3-3 3"/></svg><div><b>캐릭터 위치 옮기기</b><span><span class="kbd">Shift</span> + 끌기로 방은 그대로, 캐릭터만 옮겨요. ‘배치 편집 모드’를 켜면 그냥 끌어도 되고, 휠로 크기도 바꿔요.</span></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5a1.5 1.5 0 0 1 1.5-1.5h4.8l2 2.2h8.2A1.5 1.5 0 0 1 21 8.7v9.8a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 18.5z"/><path d="M8 13h8"/></svg><div><b>내 방 카테고리</b><span>받은 방이 많아져도 괜찮아요. 카테고리로 묶고 이름을 눌러 접었다 펴요. 만든 사람별 자동 묶기도 돼요.</span></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 4.5l5 5M12 7l5 5-8.5 8.5H3.5v-5z"/><path d="M16.5 2.5l5 5"/></svg><div><b>스포이드</b><span>색 고르기 창에서 스포이드를 누르고 홈 배경·스티커·캐릭터 창 어디든 클릭하면 그 색을 가져와요.</span></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg><div><b>색 바로 미리보기</b><span>슬라이더를 움직이는 동안 강조색·테두리 색이 바로 바뀌어 보여요. 취소하면 원래 색으로 돌아가요.</span></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13.5" r="3.5"/></svg><div><b>소개 그림처럼 캡처</b><span>둥근 홈 화면 위에 캐릭터 창을 겹쳐서 한 장으로 찍어요. 자랑용으로 딱이에요.</span></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>시계 정렬 · 홈 말풍선 쌓기</b><span>시계를 왼쪽·가운데·오른쪽으로 맞추고, 홈 캐릭터 머리 위에도 디데이 말풍선을 차곡차곡 쌓아요.</span></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg><div><b>백업에 ‘내 그림’ 폴더</b><span>넣어 둔 배경·캐릭터·표정·스티커·방 그림을 알아보기 쉬운 이름으로 백업 안에 한 번 더 모아 둬요.</span></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.3-5.7M4 4v4h4"/><path d="M12 8v4l3 2"/></svg><div><b>새 컴퓨터에서 바로 불러오기</b><span>처음 켜면 바탕화면·다운로드에서 백업 파일을 찾아 “이전 백업에서 불러올까요?” 하고 물어봐요.</span></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><b>바로가기 차단 고침</b><span>바탕화면 아이콘이 ‘애플리케이션 제어 정책’으로 막히면 설정 → 일반 → 바로가기 다시 만들기.</span></div></div>
+    </div>
+  </section>
+
   <section id="new22">
     <div class="sec-head">
       <span class="tag">new · v2.22</span>
@@ -376,7 +431,7 @@ html.poster .link{flex-basis:100%;font-size:15px;color:var(--text)}
         <h2>작업 방송이랑<br>자랑용 캡처도 돼요</h2>
         <p>공유 창을 OBS 윈도우 캡처로 잡으면 방송 화면에 캐릭터랑 타이머가 올라가요.<br>
           캡처 버튼으로 홈 화면이나 캐릭터 창만 깔끔하게 찍을 수도 있어요.<br>
-          말풍선 빼기, 2배 크기 저장도 돼요.</p>
+          홈 화면 위에 캐릭터 창을 겹친 ‘소개 그림처럼’ 캡처, 말풍선 빼기, 2배 크기 저장도 돼요.</p>
       </div>
     </div>
   </section>
@@ -388,16 +443,310 @@ html.poster .link{flex-basis:100%;font-size:15px;color:var(--text)}
         <h2>받는 법은 간단해요</h2>
       </div>
       <ol class="steps">
-        <li><div><b>아래 링크에서 zip 받기</b><span>파일 이름에 버전이 붙어서 받아져요 (FocusBuddy-Setup-2.22.zip).</span></div></li>
-        <li><div><b>압축 풀고 설치.bat 더블클릭</b><span>zip을 오른쪽 클릭 → 압축 풀기를 먼저 해 주세요.<br>설치가 끝나면 바탕화면에 아이콘이 생겨요.<br>폴더 안에 설치 안내, 버전 파일(Focus Buddy v2.22.txt), 기능 소개 그림도 들어 있어요.</span></div></li>
+        <li><div><b>아래 링크에서 zip 받기</b><span>파일 이름에 버전이 붙어서 받아져요 (FocusBuddy-Setup-2.23.zip).</span></div></li>
+        <li><div><b>압축 풀고 설치.bat 더블클릭</b><span>zip을 오른쪽 클릭 → 압축 풀기를 먼저 해 주세요.<br>설치가 끝나면 바탕화면에 아이콘이 생겨요.<br>폴더 안에 설치 안내, 버전 파일(Focus Buddy v2.23.txt), 기능 소개 그림도 들어 있어요.</span></div></li>
         <li><div><b>업데이트는 버튼 하나로</b><span>새 버전이 나오면 켤 때 알려 줘요.<br>설정 → 일반 → 업데이트 확인을 눌러도 돼요. 내 데이터는 그대로예요.</span></div></li>
       </ol>
       <div class="link-row">
-        <span class="link" id="dl">https://github.com/shuna077/focusbuddy-releases/releases/download/v2.22/FocusBuddy-Setup-2.22.zip</span>
+        <span class="link" id="dl">https://github.com/shuna077/focusbuddy-releases/releases/download/v2.23/FocusBuddy-Setup-2.23.zip</span>
         <button class="copy" id="copy" type="button">링크 복사</button>
       </div>
       <p class="note">항상 최신 버전 고정 링크 (파일 이름엔 버전 없음) · <span class="nowrap">https://github.com/shuna077/focusbuddy-releases/releases/latest/download/FocusBuddy-Setup.zip</span></p>
       <p class="note">내 일정이나 수입 기록은 내 컴퓨터에만 저장돼요.<br>어디로도 보내지 않아요.</p>
+      <p class="note">컴퓨터를 바꿀 땐 설정 → 일반 → 백업 파일 만들기로 zip 하나를 챙겨 두세요.<br>새 컴퓨터에서 처음 켜면 그 파일을 찾아 불러올지 물어봐요.</p>
+    </div>
+  </section>
+
+  <section id="guide">
+    <div class="sec-head">
+      <span class="tag">guide</span>
+      <h2>기능 자세히 보기</h2>
+      <p>궁금한 항목을 눌러 펼쳐 보세요.<br>프로그램 안에서도 <span class="kbd">F1</span>을 누르면 같은 설명을 볼 수 있어요.</p>
+    </div>
+    <div class="guide-tools">
+      <nav class="guide-toc" aria-label="기능 목록">
+        <a href="#g-start">시작하기</a>
+        <a href="#g-home">홈 화면과 위젯</a>
+        <a href="#g-timer">타이머와 움직임 감지</a>
+        <a href="#g-char">캐릭터</a>
+        <a href="#g-desk">캐릭터 창과 방</a>
+        <a href="#g-mood">방 분위기 (어둡게 · 역광)</a>
+        <a href="#g-room">방 파일 (받기 · 선물 · 만들기)</a>
+        <a href="#g-plan">플래너 · 보드 · 캘린더</a>
+        <a href="#g-stats">통계와 작업 기록</a>
+        <a href="#g-income">수입 관리</a>
+        <a href="#g-share">공유 모드 · 캡처</a>
+        <a href="#g-look">꾸미기 · 테마 · 색 고르기</a>
+        <a href="#g-data">백업 · 데이터 · 업데이트</a>
+        <a href="#g-keys">단축키</a>
+        <a href="#g-faq">자주 묻는 질문</a>
+      </nav>
+      <button class="all-btn" id="guide-all" type="button">모두 펼치기</button>
+    </div>
+    <div class="guide">
+      <details id="g-start">
+        <summary><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg><span>시작하기<small>처음 켰을 때 이것부터</small></span></summary>
+        <div class="body">
+        <div><h4>1. 내 캐릭터 넣기</h4><p>홈 화면 가운데 ‘이곳을 클릭해 캐릭터를 추가해보세요!’를 눌러요.
+        배경이 투명한 PNG(누끼 딴 그림)를 넣으면 스티커처럼 예쁘게 떠요. 움직이는 GIF · WEBP도 돼요.</p></div>
+        <div><h4>2. 배경 바꾸기</h4><p>오른쪽 위 연필 버튼(꾸미기 모드) → 배경에서 내 그림으로 바꿔요.
+        그림을 고르면 홈 화면에 보일 부분을 네모로 고를 수 있고, 그림에서 뽑은 색으로 테마가 저절로 맞춰져요.</p></div>
+        <div><h4>3. 캐릭터 창 띄우기</h4><p>오른쪽 위 사람 모양 버튼을 누르면 바탕화면에 캐릭터가 따로 떠요.
+        마우스를 올리고 ‘배경’ 버튼을 누르면 작은 도트 방을 고를 수 있어요.</p></div>
+        <div><h4>4. 예시 일정 정리하기</h4><p>[예시]로 시작하는 일정과 할 일은 눌러서 고치거나 지워도 돼요.</p></div>
+        <p class="tip">타이머는 따로 시작 버튼을 누르지 않아도 화면 움직임을 보고 저절로 흘러가요.</p>
+        <p class="tip">예전에 쓰던 컴퓨터가 있다면: 처음 켤 때 백업 파일을 찾아서 “이전 백업에서 불러올까요?” 하고 물어봐요.</p>
+        </div>
+      </details>
+      <details id="g-home">
+        <summary><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>홈 화면과 위젯<small>시계 · 캘린더 · 타이머 · 디데이 · 할 일 · 음악 · 스티커</small></span></summary>
+        <div class="body">
+        <div><h4>위젯</h4><ul>
+        <li><b>시계 · 캘린더</b>: 오늘 날짜와 이번 달. 일정 있는 날엔 점이 찍혀요. 시계는 왼쪽 · 가운데 · 오른쪽으로 정렬할 수 있어요.<span class="new-dot">NEW</span></li>
+        <li><b>집중 타이머</b>: 오늘 작업한 시간과 하루 목표까지 남은 시간.</li>
+        <li><b>디데이</b>: 마감이 가까운 일정과 체크리스트 진행도.</li>
+        <li><b>오늘의 할 일</b>: 바로 적고 체크해요.</li>
+        <li><b>음악</b>: 스포티파이, 유튜브, 멜론 등 지금 재생 중인 곡을 띄우고, 재생 · 일시정지 · 다음 곡도 돼요.</li>
+        <li><b>앱 독 · 바로가기</b>: 자주 쓰는 프로그램, 폴더, 사이트를 붙여 둬요.</li>
+        <li><b>인사말 · 프로필 · 세로 문구 · 사진 · 메모 · 주간 통계</b>: 필요한 것만 켜서 써요. 프로필 사진은 동그라미로 자르고 확대 · 축소해요.</li>
+        </ul></div>
+        <div><h4>홈 캐릭터 말풍선</h4><p>설정 → 말풍선 → ‘홈에서도 말풍선 쌓기’를 켜면 디데이 말풍선이 캐릭터 머리 위에 차곡차곡 쌓여요.<span class="new-dot">NEW</span></p></div>
+        <div><h4>스티커</h4><ul>
+        <li>꾸미기 모드 → 스티커 추가. 끌어서 옮기고, 모서리 동그라미로 크기, 휠로 회전해요.</li>
+        <li>GIF · 움직이는 WEBP 스티커는 움직여요.</li>
+        <li>오른쪽 클릭 → 모양 자르기: 둥근 모서리 · 원 · 하트 · 별 · 구름. 테두리와 그림자가 모양을 따라가요.</li>
+        <li>여러 개를 골라 테두리 · 그림자 · 모양을 한 번에 바꿀 수 있어요.</li>
+        </ul></div>
+        <div><h4>순서와 레이어</h4><ul>
+        <li>위젯 · 스티커 · 캐릭터가 모두 한 줄 순서예요. 소품 스티커를 캐릭터 뒤에도 둘 수 있어요.</li>
+        <li>고르면 옆에 맨 앞 · 앞 · 뒤 · 맨 뒤 · 작게 · 크게 버튼이 떠요.</li>
+        <li>꾸미기 모드 위쪽 ‘레이어’를 누르면 한 목록으로 보여요. 끌어서 순서 바꾸기, 눈으로 숨기기, 휴지통으로 지우기.</li>
+        <li>스티커와 캐릭터는 그림이 있는 곳만 눌려요. 투명한 곳을 누르면 아래에 있는 게 잡혀요.</li>
+        </ul></div>
+        </div>
+      </details>
+      <details id="g-timer">
+        <summary><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9.5 2.5h5"/></svg><span>타이머와 움직임 감지<small>켜 두기만 하면 작업 시간이 쌓여요</small></span></summary>
+        <div class="body">
+        <p>화면이 움직이는 동안은 ‘집중 중’, 한동안 그대로면 ‘쉬는 중’으로 바뀌어요. 멍하니 있던 시간은 빠져요.</p>
+        <div><h4>무엇을 볼지 고르기</h4><ul>
+        <li><b>전체 화면</b>: 기본값. 모니터 전체의 움직임을 봐요.</li>
+        <li><b>특정 창</b>: 그림 프로그램 창만 봐요. 딴짓한 시간은 안 쌓여요.</li>
+        <li><b>화면 영역</b>: 화면 일부분만 네모로 골라요.</li>
+        </ul></div>
+        <div><h4>아이패드로 그릴 때</h4><p>미러링 프로그램으로 아이패드 화면을 컴퓨터에 띄우고, 설정 → 타이머·감지 → 바꾸기에서 그 창을 등록하면 끝이에요.
+        마우스 움직임까지 세고 싶지 않으면 ‘마우스 움직임도 집중으로 치기’를 꺼 두세요.</p></div>
+        <div><h4>그 밖의 설정</h4><ul>
+        <li><b>감지 민감도</b>: 가만히 있을 때 막대가 기준선을 넘지 않게 맞춰요.</li>
+        <li><b>쉬는 중으로 바뀌기까지</b>: 몇 초 동안 움직임이 없으면 쉬는 걸로 볼지.</li>
+        <li><b>하루 목표</b>: 정해 두면 인사말에 남은 시간이 나와요.</li>
+        <li><b>휴식 알림</b>: 오래 쉬지 않으면 캐릭터가 쉬자고 말해 줘요.</li>
+        <li><b>일시정지</b>: 타이머 위젯 버튼이나 단축키 <span class="kbd">Ctrl+Alt+P</span>.</li>
+        </ul></div>
+        </div>
+      </details>
+      <details id="g-char">
+        <summary><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg><span>캐릭터<small>캐릭터 그림 · 상태별 표정 · 테두리</small></span></summary>
+        <div class="body">
+        <ul>
+        <li><b>캐릭터 그림</b>: 홈 화면 가운데를 누르거나 설정 → 캐릭터에서 바꿔요. PNG · GIF · WEBP 모두 돼요.</li>
+        <li><b>상태별 표정</b>: ‘집중 중’, ‘쉬는 중’처럼 상태마다 다른 그림을 넣을 수 있어요.</li>
+        <li><b>테두리 · 그림자</b>: 스티커처럼 테두리를 두르고 두께 · 색을 바꿔요.</li>
+        <li><b>창마다 다른 캐릭터</b>: 캐릭터 창 · 공유 창은 홈과 같은 캐릭터를 쓰거나 따로 정할 수 있어요.</li>
+        <li>캐릭터 창의 캐릭터를 누르면 통통 · 말랑 · 흔들 애니메이션이 나와요.</li>
+        </ul>
+        </div>
+      </details>
+      <details id="g-desk">
+        <summary><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-5 9 5v10l-9 4-9-4z"/><path d="M12 13v10M3 9l9 4 9-4"/></svg><span>캐릭터 창과 방<small>방 고르기 · 여러 캐릭터 · 위치 옮기기 · 카테고리</small></span></summary>
+        <div class="body">
+        <p>캐릭터 창은 홈 화면과 따로 바탕화면 위에 떠 있는 작은 창이에요. 마우스를 올리면 버튼이, 오른쪽 클릭하면 모든 메뉴가 나와요.</p>
+        <div><h4>방 고르기</h4><ul>
+        <li>캐릭터 창 → ‘배경’ 버튼 → 배경 고르기 창에서 기본 방 5개와 내 방(받은 방 · 만든 방) 중에 골라요.</li>
+        <li><span class="kbd">Ctrl</span> + 끌기로 방 위치, <span class="kbd">Ctrl</span> + 휠로 방 크기를 바꿔요.</li>
+        <li>방 그림자: 없음 · 약하게 · 진하게. 방 대신 투명 · 카드 · 단색 · 초록(OBS 크로마키) 배경도 돼요.</li>
+        </ul></div>
+        <div><h4>캐릭터 위치 옮기기<span class="new-dot">NEW</span></h4><ul>
+        <li><span class="kbd">Shift</span> + 끌기: 방은 화면에 그대로 두고, 캐릭터만 방 안에서 옮겨요.</li>
+        <li>오른쪽 클릭 → 여러 캐릭터 · 캐릭터 위치 → ‘메인 캐릭터 위치 되돌리기’로 가운데로 돌아와요.</li>
+        </ul></div>
+        <div><h4>여러 캐릭터<span class="new-dot">NEW</span></h4><ul>
+        <li>오른쪽 클릭 → 여러 캐릭터 · 캐릭터 위치 → <b>캐릭터 추가…</b>로 다른 캐릭터를 같은 방에 세워요.</li>
+        <li><b>배치 편집 모드</b>를 켜면 캐릭터마다 점선이 생기고, 그냥 끌어서 옮기고 휠로 크기를 바꿔요.</li>
+        <li>같이 띄운 캐릭터를 오른쪽 클릭 → 크게 · 작게 · 원래 크기 · 좌우 뒤집기 · 메인 캐릭터 앞에 두기 · 그림 바꾸기 · 빼기.</li>
+        <li>테두리와 방 분위기(어둡게 · 역광)는 메인 캐릭터와 똑같이 입혀지고, 꾸미기 템플릿에도 같이 저장돼요.</li>
+        </ul></div>
+        <div><h4>내 방 카테고리<span class="new-dot">NEW</span></h4><ul>
+        <li>배경 고르기 창의 <b>＋ 카테고리</b>로 묶음을 만들어요 (예: 고딕, 바이오하자드, 친구한테 받은 방).</li>
+        <li>방을 오른쪽 클릭 → 카테고리 옮기기. 카테고리 이름을 누르면 접었다 펴져요.</li>
+        <li>카테고리 이름을 오른쪽 클릭 → 이름 바꾸기 · 위로 · 아래로 · 지우기 · <b>만든 사람 이름으로 자동 묶기</b>.</li>
+        <li>캐릭터 창 오른쪽 클릭 → 배경 메뉴와 설정의 방 목록에도 카테고리별로 보여요.</li>
+        </ul></div>
+        <div><h4>말풍선과 창 설정</h4><ul>
+        <li>디데이 · 내 상태 · 대사가 말풍선으로 떠요. 말풍선은 끌어서 자리를 옮기고, 꼬리 방향도 골라요.</li>
+        <li><b>항상 위</b> · <b>클릭 통과</b>(눌러도 뒤 창이 눌림) · <b>OBS 창 캡처에 보이게</b>.</li>
+        <li>마우스 휠로 캐릭터 크기를 바꿔요.</li>
+        </ul></div>
+        </div>
+      </details>
+      <details id="g-mood">
+        <summary><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg><span>방 분위기 (어둡게 · 역광)<small>어두운 방에서도 캐릭터가 자연스럽게</small></span></summary>
+        <div class="body">
+        <p>어두운 방에 밝은 캐릭터가 붕 떠 보일 때 써요. 방마다 따로 기억해서, 방을 바꾸면 그 방의 설정으로 바뀌어요.</p>
+        <ul>
+        <li><b>캐릭터 어둡게</b>: 0~80%. 색은 ‘자동’이면 방의 밤 색, 직접 고를 수도 있어요.</li>
+        <li><b>역광 방향</b>: 없음 · 왼쪽 · 오른쪽 · 위 · 뒤(전체). ‘뒤’는 윤곽 전체가 빛나고 바깥으로도 살짝 번져요.</li>
+        <li><b>강도</b> 0~100% · <b>두께</b> 1~10 · <b>색</b> 촛불 · 달빛 · 새벽 · 형광 · 직접 고르기.</li>
+        </ul>
+        <p>배경 고르기 창 아래쪽, 또는 캐릭터 창 오른쪽 클릭 → 방 분위기에서 바꿔요.</p>
+        </div>
+      </details>
+      <details id="g-room">
+        <summary><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="5" rx="1"/><path d="M5 13v8h14v-8M12 8v13"/><path d="M12 8c-1.5-3-5-3.5-5-1.2C7 8 9 8 12 8zM12 8c1.5-3 5-3.5 5-1.2C17 8 15 8 12 8z"/></svg><span>방 파일 (받기 · 선물 · 만들기)<small>.fbroom 파일 하나로 주고받아요</small></span></summary>
+        <div class="body">
+        <ul>
+        <li><b>받은 방 넣기</b>: 방 파일을 더블클릭하거나, 캐릭터 창에 끌어다 놓거나, ‘방 파일 불러오기’를 눌러요. 보낸 사람의 메시지가 떠요.</li>
+        <li><b>선물하기</b>: 배경 고르기 창 → 선물용으로 내보내기. 방 이름과 한마디를 적으면 파일이 생겨요.</li>
+        <li><b>그림으로 방 만들기</b>: 가이드 그림 위에 방을 그려서 넣으면 나만의 방이 돼요. 캐릭터 앞에 올 물건은 앞 그림으로 따로 넣어요.</li>
+        </ul>
+        <p class="tip">새 부품을 쓰는 방은 최신 버전에서만 열려요. 안 열리면 업데이트를 먼저 해 주세요.</p>
+        </div>
+      </details>
+      <details id="g-plan">
+        <summary><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg><span>플래너 · 보드 · 캘린더<small>외주 · 커미션 마감 관리</small></span></summary>
+        <div class="body">
+        <div><h4>플래너</h4><ul>
+        <li>프로젝트를 만들고 시작일 · 마감일을 정해요. 오늘 · 내일 · 고른 날부터 몇 주 · 몇 달 뒤로 바로 계산해요.</li>
+        <li>러프 → 선화 → 밑색 → 완성처럼 단계를 체크하면 진행도가 올라가요. 자주 쓰는 단계는 템플릿으로 저장해요.</li>
+        <li>진행이 늦은 일정은 ‘마감 위험’으로 따로 보여 주고, 캐릭터가 하루 한 번 알려 줘요.</li>
+        <li>‘디데이에 표시’ · ‘캐릭터 말풍선’을 켜면 홈과 캐릭터 창에도 떠요.</li>
+        </ul></div>
+        <div><h4>보드</h4><p>할 일 → 진행 중 → 검토·수정 → 완료. 카드를 끌어서 옮기면 상태가 바뀌어요.</p></div>
+        <div><h4>캘린더</h4><p>월 · 주 · 목록으로 봐요. 구글 캘린더 주소를 넣으면 원래 쓰던 일정도 같이 보여요.
+        분류(외주, 커미션…)의 이름과 색은 연필 버튼으로 바꿔요.</p></div>
+        </div>
+      </details>
+      <details id="g-stats">
+        <summary><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>통계와 작업 기록<small>얼마나, 무엇을 그렸는지</small></span></summary>
+        <div class="body">
+        <ul>
+        <li>오늘 · 최근 7일 · 최근 30일 · 하루 평균 작업 시간.</li>
+        <li>분류별 · 프로젝트별 작업 시간 막대.</li>
+        <li><b>작업 기록</b>: 집중한 시간은 저절로 쌓이고, 두 번 눌러 그날 컨디션과 메모를 남겨요. 컨디션 흐름도 그래프로 봐요.</li>
+        <li>잠깐 쉬었다 와도 한 덩어리로 묶이게 ‘작업 기록 나누는 기준’을 설정 → 일반에서 바꿔요.</li>
+        </ul>
+        </div>
+      </details>
+      <details id="g-income">
+        <summary><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 9.5c0-1.2 1.3-2 3-2s3 .8 3 2-1.3 1.8-3 2.2-3 1-3 2.3 1.3 2 3 2 3-.8 3-2M12 5.5v13"/></svg><span>수입 관리<small>커미션 · 고객 · 지출 · 가격표 · 메시지</small></span></summary>
+        <div class="body">
+        <ul>
+        <li><b>개요</b>: 이번 달 실수령 · 미수금 · 지출 · 순이익과 최근 12개월 그래프. 연도별로 바꾸면 한 해 합계와 해마다 비교.</li>
+        <li><b>커미션</b>: 작업마다 금액, 받은 돈, 마감. <b>슬롯</b>으로 이번 달 받을 수 있는 수를 정해요.</li>
+        <li><b>고객</b>: 고객별로 작업과 받은 돈을 모아 봐요.</li>
+        <li><b>지출</b>: 구독료, 재료비 같은 지출.</li>
+        <li><b>가격표 · 견적</b>: 내 가격표로 견적을 빨리 계산해요.</li>
+        <li><b>메시지</b>: 견적 안내 · 입금 확인 · 러프 전달 문구에 고객 이름 · 작업 · 금액이 자동으로 채워져요.</li>
+        <li><b>환율</b>: 달러 · 위안 · 엔화로 받은 돈도 원화로 합쳐 보여 줘요.</li>
+        <li><b>금액 가리기</b>: 버튼 하나로 ₩•••로 가려요. 공유 창을 켜면 저절로 가려지게 할 수도 있어요.</li>
+        </ul>
+        </div>
+      </details>
+      <details id="g-share">
+        <summary><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13.5" r="3.5"/></svg><span>공유 모드 · 캡처<small>방송용 창과 자랑용 캡처</small></span></summary>
+        <div class="body">
+        <div><h4>공유 모드</h4><ul>
+        <li>캐릭터 · 타이머 · 디데이가 뜨는 방송용 창이에요. OBS ‘윈도우 캡처’로 잡으면 방송 화면에 올라가요.</li>
+        <li><b>옆 바로가기</b>: 공유 창 옆에 자주 쓰는 앱 바로가기를 붙여요. 왼쪽 · 오른쪽, 마우스를 올릴 때만 보이기도 골라요.</li>
+        </ul></div>
+        <div><h4>캡처</h4><ul>
+        <li>오른쪽 위 카메라 버튼: 다운로드 › FocusBuddy 캡처 폴더에 저장하고 클립보드에도 복사해요.</li>
+        <li>카메라 버튼 오른쪽 클릭 → <b>찍을 범위</b>: 홈 화면만 · 홈 + 캐릭터 창(화면에 놓인 그대로) · <b>홈 + 캐릭터 창(소개 그림처럼 겹쳐서)</b><span class="new-dot">NEW</span> · 캐릭터 창만.</li>
+        <li>‘소개 그림처럼’은 둥근 홈 화면에 그림자를 넣고, 오른쪽 아래에 캐릭터 창을 살짝 튀어나오게 겹쳐 한 장으로 만들어요.
+        캐릭터 창 오른쪽 클릭 → ‘홈 화면이랑 같이 캡처’로도 바로 찍어요.</li>
+        <li>말풍선 빼고 찍기 · 2배 크기로 저장(도트가 번지지 않게) · 저장 위치 바꾸기.</li>
+        <li>찍고 나면 뜨는 알림의 ‘폴더 열기’로 방금 찍은 파일을 바로 확인해요.</li>
+        </ul></div>
+        </div>
+      </details>
+      <details id="g-look">
+        <summary><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.2 0 1.8-.8 1.8-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H17a4 4 0 0 0 4-4c0-4.4-4-8.2-9-8.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7" r="1.2"/><circle cx="15" cy="7.5" r="1.2"/></svg><span>꾸미기 · 테마 · 색 고르기<small>꾸미기 모드 · 템플릿 · 스포이드</small></span></summary>
+        <div class="body">
+        <div><h4>꾸미기 모드</h4><ul>
+        <li>오른쪽 위 연필 버튼. 위젯을 끌어서 옮기고 모서리로 크기를 바꿔요.</li>
+        <li>되돌리기 <span class="kbd">Ctrl+Z</span> · 다시 하기 <span class="kbd">Ctrl+Y</span> · 미리보기 · 취소 · 저장.</li>
+        <li>자석: 가장자리와 간격에 딱 맞춰져요 (<span class="kbd">Alt</span> 누르고 끌면 잠깐 꺼져요).</li>
+        </ul></div>
+        <div><h4>배경과 테마</h4><ul>
+        <li>내 그림을 배경으로 쓰면 그림에서 색을 뽑아 테마가 저절로 맞춰져요. 보일 영역은 나중에 다시 고를 수 있어요.</li>
+        <li>GIF · 움직이는 WEBP 배경도 돼요.</li>
+        <li>자동 · 다크 · 화이트, 강조색, 유리 흐림, 배경 어둡게, 글자 그림자는 설정 → 꾸미기에서.</li>
+        </ul></div>
+        <div><h4>색 고르기 창<span class="new-dot">NEW</span></h4><ul>
+        <li><b>스포이드</b>: 누르면 화면이 잠깐 멈추고, 홈 배경 · 스티커 · 캐릭터 창 등 원하는 곳을 클릭하면 그 색을 가져와요.
+        돋보기로 한 칸씩 크게 보여 주고, <span class="kbd">Esc</span>나 오른쪽 클릭으로 취소해요. 모니터가 여러 개여도 돼요.</li>
+        <li><b>바로 미리보기</b>: 강조색 · 테두리 색 · 단색 배경 · 역광 색 등은 슬라이더를 움직이는 동안 바로 바뀌어 보여요. [취소]하면 원래 색으로 돌아가요.</li>
+        <li><b>최근 쓴 색 · 배경에서 뽑은 색</b>: 눌러서 바로 골라요.</li>
+        </ul></div>
+        <div><h4>꾸미기 템플릿</h4><ul>
+        <li>기본 테마 5개: 밤하늘 집중, 노을 카페, 딸기우유, 민트 스튜디오, 구름 라벤더.</li>
+        <li>내 템플릿: 테마 · 배경 · 배치 · 스티커 · 캐릭터(같이 띄운 캐릭터 포함)를 슬롯에 저장하고 한 번에 불러와요.</li>
+        <li>캐릭터가 저장되지 않은 예전 템플릿은 목록에 따로 표시되고, 불러올 때 알려 줘요.</li>
+        </ul></div>
+        </div>
+      </details>
+      <details id="g-data">
+        <summary><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h11l3 3v15H5z"/><path d="M8 3v6h8V3M8 21v-7h8v7"/></svg><span>백업 · 데이터 · 업데이트<small>컴퓨터를 바꿔도 그대로</small></span></summary>
+        <div class="body">
+        <div><h4>내 데이터</h4><p>일정, 수입, 설정, 그림은 모두 내 컴퓨터의 데이터 폴더에만 저장돼요. 어디로도 보내지 않아요.</p></div>
+        <div><h4>백업하고 되돌리기</h4><ul>
+        <li>설정 → 일반 → <b>백업 파일 만들기</b>: 일정 · 수입 · 커미션 · 템플릿 · 꾸미기 · 넣은 그림이 zip 하나에 전부 들어가요.</li>
+        <li>zip은 <b>압축을 풀지 말고 그대로</b> 보관해요. 되돌릴 땐 <b>백업에서 되돌리기</b>에서 그 zip을 그대로 골라요.</li>
+        <li><b>내 그림 폴더</b><span class="new-dot">NEW</span>: zip 안에 배경 · 캐릭터 · 표정 · 스티커 · 방 · 기타로 이름 붙여 한 번 더 모아 둬요. 그림만 꺼내 쓰고 싶을 때 열어 보세요.</li>
+        <li><b>새 컴퓨터에서</b><span class="new-dot">NEW</span>: 설치하고 처음 켜면 바탕화면 · 다운로드 · 문서에서 백업 파일을 찾아
+        [이 백업 불러오기] · [백업 파일 직접 고르기] · [새로 시작] 중에 고르게 해 줘요.</li>
+        <li>업데이트할 때는 최근 설정 백업을 자동으로 남겨 둬요.</li>
+        </ul></div>
+        <div><h4>업데이트</h4><ul>
+        <li>설정 → 일반 → 업데이트 확인. 켤 때 하루 한 번 새 버전이 있으면 알려 줘요. 내 데이터는 그대로예요.</li>
+        <li>새 버전이 제대로 안 켜지면 이전 버전으로 알아서 돌아가요.</li>
+        <li>새 버전으로 처음 켜면 업데이트 소식 창이 한 번 떠요.</li>
+        </ul></div>
+        <div><h4>가볍게 쓰기 · 실행</h4><ul>
+        <li>저사양 모드: 흐림 · 애니메이션 · 움직이는 GIF를 끄고 화면 감지도 덜 자주 해요.</li>
+        <li>컴퓨터 켤 때 자동 실행하면 트레이에서 조용히 기록을 시작해요.</li>
+        </ul></div>
+        </div>
+      </details>
+      <details id="g-keys">
+        <summary><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="7" width="19" height="10" rx="2"/><path d="M6 11h.01M9 11h.01M12 11h.01M15 11h.01M18 11h.01M7 14.5h10"/></svg><span>단축키<small>알아 두면 편해요</small></span></summary>
+        <div class="body">
+        <table>
+        <tr><td><span class="kbd">Ctrl+Alt+P</span></td><td>일시정지 / 다시 시작</td></tr>
+        <tr><td><span class="kbd">Ctrl+Alt+C</span></td><td>캐릭터 창 켜기 / 끄기</td></tr>
+        <tr><td><span class="kbd">Ctrl+Alt+S</span></td><td>내 상태 바꾸기</td></tr>
+        <tr><td><span class="kbd">F1</span></td><td>앱 안 기능 설명 창</td></tr>
+        <tr><td><span class="kbd">Ctrl+Z</span> · <span class="kbd">Ctrl+Y</span></td><td>꾸미기 되돌리기 · 다시 하기</td></tr>
+        <tr><td><span class="kbd">Alt</span> + 끌기</td><td>자석 잠깐 끄기</td></tr>
+        <tr><td>휠 (캐릭터 창)</td><td>캐릭터 크기</td></tr>
+        <tr><td><span class="kbd">Ctrl</span> + 끌기 · 휠 (캐릭터 창)</td><td>방 위치 · 방 크기</td></tr>
+        <tr><td><span class="kbd">Shift</span> + 끌기 (캐릭터 창)</td><td>캐릭터만 옮기기<span class="new-dot">NEW</span></td></tr>
+        </table>
+        </div>
+      </details>
+      <details id="g-faq">
+        <summary><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.3 9.3a2.8 2.8 0 0 1 5.4 1c0 1.9-2.7 2.3-2.7 4.2"/><path d="M12 17.6v.01"/></svg><span>자주 묻는 질문<small>막히면 여기부터</small></span></summary>
+        <div class="body">
+        <div><h4>오류가 났어요</h4><p>오류 창의 ‘만든 사람에게 보내기’를 눌러 주세요. 창이 안 떠도 설정 → 일반 → 문제 신고하기로 보낼 수 있어요.
+        보내기 전에 내용을 보여 주고, 일정 · 수입 · 그림은 보내지 않아요. 사용자 이름과 폴더 경로는 가려져요.</p></div>
+        <div><h4>바탕화면 아이콘으로 안 켜져요</h4><p>‘애플리케이션 제어 정책에서 이 파일을 차단했습니다’가 뜨면 설치 폴더의 설치.bat으로 한 번 켠 뒤
+        설정 → 일반 → <b>바로가기 다시 만들기</b>를 눌러 주세요. 작업 표시줄에 고정해 둔 아이콘도 같이 고쳐져요.</p></div>
+        <div><h4>타이머가 안 흘러요</h4><p>설정 → 타이머·감지에서 감지 대상을 확인해 주세요. ‘특정 창’이면 그 창이 최소화돼 있지 않은지, 일시정지 중은 아닌지 봐 주세요.</p></div>
+        <div><h4>캐릭터 창을 눌러도 반응이 없어요</h4><p>‘클릭 통과’가 켜져 있으면 눌리지 않아요. 설정 → 캐릭터 창에서 꺼 주세요.</p></div>
+        <div><h4>업데이트하면 설정이 사라지나요?</h4><p>아니요. 일정 · 수입 · 꾸미기는 그대로이고, 업데이트 전에 자동 백업도 해 둬요.</p></div>
+        <div><h4>컴퓨터가 느려진 것 같아요</h4><p>설정 → 일반 → 저사양 모드를 켜 보세요. 캐릭터 창의 숨쉬기 · 반짝이를 꺼도 가벼워져요.</p></div>
+        </div>
+      </details>
     </div>
   </section>
 
@@ -407,6 +756,18 @@ html.poster .link{flex-basis:100%;font-size:15px;color:var(--text)}
 </div>
 
 <script>
+(function(){
+  var ds=[].slice.call(document.querySelectorAll('.guide details')), btn=document.getElementById('guide-all');
+  if(document.documentElement.classList.contains('poster')){ ds.forEach(function(d){ d.open=true; }); }
+  function sync(){ if(btn) btn.textContent = ds.every(function(d){return d.open;}) ? '모두 접기' : '모두 펼치기'; }
+  if(btn) btn.addEventListener('click',function(){ var open=!ds.every(function(d){return d.open;}); ds.forEach(function(d){ d.open=open; }); sync(); });
+  ds.forEach(function(d){ d.addEventListener('toggle',sync); });
+  document.querySelectorAll('.guide-toc a').forEach(function(a){
+    a.addEventListener('click',function(){ var d=document.getElementById(a.getAttribute('href').slice(1)); if(d){ d.open=true; sync(); } });
+  });
+  function fromHash(){ var d=location.hash&&document.getElementById(location.hash.slice(1)); if(d&&d.tagName==='DETAILS'){ d.open=true; sync(); } }
+  window.addEventListener('hashchange',fromHash); fromHash(); sync();
+})();
 (function(){
   var b=document.getElementById('copy'), t=document.getElementById('dl');
   if(!b) return;
