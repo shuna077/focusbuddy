@@ -117,6 +117,13 @@ section{padding-block:64px 8px}
 .room.add{border:2px dashed var(--line);background:none;align-content:center;padding:18px 14px;gap:10px}
 .room.add .file{font-family:var(--pixel);font-size:13px;color:var(--gold)}
 .room.add p{font-size:14px;color:var(--muted)}
+.room.more{border:2px solid var(--gold);background:rgba(216,180,90,.08);align-content:center;padding:18px 14px;gap:10px;text-decoration:none;transition:background .15s,transform .15s}
+.room.more:hover,.room.more:focus-visible{background:rgba(216,180,90,.18);transform:translateY(-2px)}
+.room.more:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.room.more .file{font-family:var(--pixel);font-size:13px;color:var(--gold)}
+.room.more p{font-size:14px;color:var(--muted)}
+.room.more b{color:var(--text);font-size:15px}
+@media (prefers-reduced-motion:reduce){.room.more{transition:none}.room.more:hover{transform:none}}
 
 .mood{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 @media (max-width:700px){.mood{grid-template-columns:1fr}}
@@ -330,6 +337,7 @@ html.poster .link{flex-basis:100%;font-size:15px;color:var(--text)}
       <div class="room smp"><img src="img/room_angel.webp" width="389" height="375" alt="구름 라벤더 방"><span>구름 라벤더 방</span></div>
       <div class="room smp"><img src="img/room_wood.webp" width="389" height="375" alt="원목 아틀리에"><span>원목 아틀리에</span></div>
       <div class="room add"><span class="file">+ .FBROOM</span><p>방 파일을 받으면<br>더블클릭 한 번으로<br>새 방이 추가돼요</p></div>
+      <a class="room more" href="gift/character-rooms/"><span class="file">MORE ROOMS</span><p><b>캐릭터 방 더 받기 →</b><br>방을 더 받고 싶으면<br>여기서 받아 가세요</p></a>
     </div>
     <div class="soon">
       <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.7 1.8 1.8.7-1.8.7L19 21l-.7-1.8-1.8-.7 1.8-.7z"/></svg></div>
