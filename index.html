@@ -241,10 +241,10 @@ html.poster .all-btn{display:none}
 .perk span.file{display:inline;margin:0}
 .hist summary small{margin-left:auto;text-align:right}
 
-.share-note{display:flex;gap:12px;align-items:flex-start;margin:16px 0 4px;padding:14px 16px;border-radius:14px;
+.share-note{display:flex;gap:12px;align-items:flex-start;margin:0;padding:14px 16px;max-width:760px;border-radius:14px;
   border:1.5px solid var(--rose);background:rgba(229,146,168,.10);color:var(--text);font-size:15px;line-height:1.6}
-.share-note svg{flex:none;width:22px;height:22px;margin-top:2px;stroke:var(--rose);stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.share-note b{color:var(--rose)}
+.share-note svg{flex:none;width:26px;height:26px;margin-top:3px;stroke:var(--rose);stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.share-note b{display:block;color:var(--rose);font-size:21px;line-height:1.35;margin-bottom:4px}
 html.poster .share-note{display:none}
 html.poster .copy{display:none}
 html.poster .zoomable{cursor:default}
@@ -255,12 +255,6 @@ html.poster .link{flex-basis:100%;font-size:15px;color:var(--text)}
 
 
 <div class="wrap">
-  <div class="share-note" role="note">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
-    <div><b>외부 공유는 삼가 주세요.</b><br>
-    지금은 가까운 분들께만 먼저 드리는 1차 배포예요. 당장은 외부에 공개할 계획이 없어요.<br>
-    전달받으신 분들은 이 페이지 주소와 설치 파일을 다른 곳(SNS · 커뮤니티 · 단체방 등)에 공유하지 말아 주세요.</div>
-  </div>
   <div class="top">
     <div class="brand"><i aria-hidden="true"></i>Focus Buddy</div>
     <div class="by">바이브 코딩으로 만든 프로그램이에요</div>
@@ -272,6 +266,12 @@ html.poster .link{flex-basis:100%;font-size:15px;color:var(--text)}
     <p class="lead">작업 시간 재기, 마감 챙기기, 수입 정리까지 한 곳에서 해요.<br>
       내 캐릭터가 작은 도트 방에 살면서 옆에서 같이 일해 줘요.<br>
       윈도우용 무료 프로그램이에요!</p>
+    <div class="share-note" role="note">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
+      <div><b>외부 공유는 삼가 주세요.</b>
+      지금은 가까운 분들께만 먼저 드리는 1차 배포예요. 당장은 외부에 공개할 계획이 없어요.<br>
+      전달받으신 분들은 이 페이지 주소와 설치 파일을 다른 곳(SNS · 커뮤니티 · 단체방 등)에 공유하지 말아 주세요.</div>
+    </div>
     <div class="cta">
       <a class="btn" href="https://github.com/shuna077/focusbuddy-releases/releases/download/v2.26.1/FocusBuddy-Setup-2.26.1.zip">↓ 무료로 받기</a>
       <span class="ver">v2.26.1</span>
