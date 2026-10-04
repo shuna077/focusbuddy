@@ -241,11 +241,22 @@ html.poster .all-btn{display:none}
 .perk span.file{display:inline;margin:0}
 .hist summary small{margin-left:auto;text-align:right}
 
-.share-note{display:flex;gap:12px;align-items:flex-start;margin:0;padding:14px 20px 14px 16px;box-sizing:border-box;border-radius:14px;
-  border:1.5px solid var(--rose);background:rgba(229,146,168,.10);color:var(--text);font-size:15px;line-height:1.6}
-.share-note svg{flex:none;width:26px;height:26px;margin-top:3px;stroke:var(--rose);stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.share-note b{display:block;color:var(--rose);font-size:21px;line-height:1.35;margin-bottom:4px}
-html.poster .share-note{display:none}
+.hero .jump{margin-top:2px}
+.info-card{margin-top:14px;border-radius:16px;font-size:15.5px;line-height:1.65;color:var(--text);overflow:hidden;
+  border:2px solid var(--rose);background:rgba(229,146,168,.10)}
+.info-card .row{display:grid;grid-template-columns:64px 1fr;gap:4px;align-items:start;padding:16px 22px 16px 12px}
+.info-card .row+.row{border-top:1px solid rgba(229,146,168,.35)}
+.info-card .row.smpl{align-items:center;padding-block:13px}
+.info-card svg{width:26px;height:26px;margin-top:2px;stroke:var(--rose);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;justify-self:center}
+.info-card .t{display:block;color:var(--rose);font-size:21px;line-height:1.35;margin-bottom:3px}
+.info-card .badge{font-family:var(--pixel);font-size:11px;letter-spacing:.06em;color:#1a1408;background:var(--gold);font-weight:400;
+  padding:3px 7px;border-radius:5px;justify-self:center;white-space:nowrap}
+.info-card strong{color:#fff}
+@media (max-width:560px){.info-card .row{grid-template-columns:44px 1fr;padding:14px 14px 14px 8px}.info-card .t{font-size:19px}
+  .info-card .row.smpl{grid-template-columns:1fr;gap:8px;padding-left:14px}.info-card .row.smpl .badge{justify-self:start}}
+html.poster .info-card .row.share{display:none}
+html.poster .info-card{border-color:var(--gold);background:#2a2316}
+html.poster .info-card .row+.row{border-top:none}
 html.poster .copy{display:none}
 html.poster .zoomable{cursor:default}
 html.poster .link{flex-basis:100%;font-size:15px;color:var(--text)}
@@ -272,18 +283,17 @@ html.poster .link{flex-basis:100%;font-size:15px;color:var(--text)}
       <span class="win">Windows 10 · 11</span>
       <a class="latest" href="https://github.com/shuna077/focusbuddy-releases/releases/latest/download/FocusBuddy-Setup.zip">항상 최신 버전 링크</a>
     </div>
-    <div class="share-note" role="note">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
-      <div><b>외부 공유는 삼가 주세요.</b>
-      지금은 가까운 분들께만 먼저 드리는 1차 배포예요. 당장은 외부에 공개할 계획이 없어요.<br>
-      전달받으신 분들은 이 페이지 주소와 설치 파일을 다른 곳(SNS · 커뮤니티 · 단체방 등)에 공유하지 말아 주세요.</div>
-    </div>
     <nav class="jump" aria-label="빠른 이동">
       <a href="#new262">2.26.2 새 기능</a><a href="#home">기능 소개</a><a href="#install">받는 법</a>
       <a href="#guide">기능 자세히 보기</a><a href="#history">지난 업데이트</a>
     </nav>
-    <p class="sample"><b>SAMPLE</b><span>화면 속 일정, 이름, 금액, 할 일은 <strong>모두 샘플</strong>이에요.<br>실제 사람이나 작업과는 관계없어요.</span></p>
-    <p class="credit">이미지 출처 · 배경 일러스트 <em>모도님</em> · SD 캐릭터 <em>개농님</em> · 프로필 사진 <em>wash님</em> · 배너 <em>차돌님</em></p>
+    <div class="info-card" role="note">
+      <div class="row share"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg><div><b class="t">외부 공유는 삼가 주세요.</b>
+        <span>지금은 가까운 분들께만 먼저 드리는 1차 배포예요. 당장은 외부에 공개할 계획이 없어요.<br>
+        전달받으신 분들은 이 페이지 주소와 설치 파일을 다른 곳(SNS · 커뮤니티 · 단체방 등)에 공유하지 말아 주세요.</span></div></div>
+      <div class="row smpl"><b class="badge">SAMPLE</b><div><span>화면 속 일정, 이름, 금액, 할 일은 <strong>모두 샘플</strong>이에요. 실제 사람이나 작업과는 관계없어요.</span></div></div>
+    </div>
+    <p class="credit" style="margin-top:0">이미지 출처 · 배경 일러스트 <em>모도님</em> · SD 캐릭터 <em>개농님</em> · 프로필 사진 <em>wash님</em> · 배너 <em>차돌님</em></p>
     <figure class="bare smp">
       <img src="img/hero.webp" width="1564" height="765" alt="홈 화면과 오른쪽 위의 미니룸. 시계, 달력, 집중 타이머, 디데이, 할 일 위젯 가운데에 캐릭터가 서 있다">
     </figure>
